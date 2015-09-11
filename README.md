@@ -81,6 +81,12 @@ Special of this gem:
 
   = image_tag FileUpload.last.file_name.url
 
+## TODO
+
+  - Test, test and test...
+
+  - Improvement speed.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/thiensubs/carrierwave-box. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
