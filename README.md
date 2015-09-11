@@ -23,6 +23,8 @@ Or install it yourself as:
 ## Usage
 
 So simple:
+
+```ruby
   Config for carrierwave:
     CarrierWave.configure do |config|
       config.box_client_id = 'your_client_id'
@@ -33,20 +35,32 @@ So simple:
       config.cache_dir = "#{Rails.root}/tmp/uploads"
       config.enable_processing = true
     end
+```
 
 Note:
+
   In your developer web view, you need to set return uri to: http://localhost
+
 Special of this gem:
-  - Gem will auto generater access token.
-  - No need time to get access token.
-  - Why box.net/box.com is so difficult to do gem: Access token is only valid in 60 minutes. :(
-  - With gem you can easy to use, but notice time to upload will be longer. (it depend your internet and your vps/computer).
+
+    - Gem will auto generater access token.
+
+    - No need time to get access token.
+
+    - Why box.net/box.com is so difficult to do gem: Access token is only valid in 60 minutes. :(
+
+    - With gem you can easy to use, but notice time to upload will be longer. (it depend your internet and your vps/computer).
+
 - How to integate:
+
+```ruby
   class FileUpload < ActiveRecord::Base
     # Upload picture
     mount_uploader :file_name, AbcUploader
   end
+```
 
+```ruby
   class AbcUploader < CarrierWave::Uploader::Base
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick
@@ -54,9 +68,12 @@ Special of this gem:
     # Choose what kind of storage to use for this uploader:
     storage :box
   end
+```
 
 - To show image in view with Rails
+
   EX:
+
   = image_tag FileUpload.last.file_name.url
 
 ## Contributing
